@@ -1,0 +1,5 @@
+.container {
+  background: var(--lc-main);
+  border-radius: 1rem;
+  border: 0.1rem solid var(--lc-border)
+}
