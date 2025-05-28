@@ -21,10 +21,14 @@ const schema = z.object({
     "Jack",
   ]),
   date: z.string().refine((dateStr) => {
-    const selectedDate = new Date(dateStr)
+    // Convert to date without shifting time zones
+    const selectedDate = new Date(dateStr + "T00:00:00") // local midnight
     const today = new Date()
-    today.setHours(0, 0, 0, 0)
-    selectedDate.setHours(0, 0, 0, 0)
+    today.setHours(0, 0, 0, 0) // truncate to local midnight
+
+    console.log("Selected (Local):", selectedDate)
+    console.log("Today (Local):", today)
+
     return selectedDate > today
   }, "Date must be in the future"),
 })
