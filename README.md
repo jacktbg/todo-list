@@ -28,8 +28,6 @@ A modern React project built with Vite and TypeScript, featuring:
 
 ```bash
 # Using npm
-npm install
+pnpm install
 
-# Using yarn
-yarn install
 ```

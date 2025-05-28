@@ -20,12 +20,13 @@ const schema = z.object({
     "Gustavo",
     "Jack",
   ]),
-  date: z
-    .string()
-    .refine(
-      (date) => new Date(date) > new Date(),
-      "Date must be in the future"
-    ),
+  date: z.string().refine((dateStr) => {
+    const selectedDate = new Date(dateStr)
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    selectedDate.setHours(0, 0, 0, 0)
+    return selectedDate > today
+  }, "Date must be in the future"),
 })
 
 type TaskFormSchema = z.infer<typeof schema>
