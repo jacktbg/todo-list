@@ -1,0 +1,62 @@
+.titlesWrapper {
+  height: clamp(8rem, 10%, 100rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleContainer {
+  width: 35%;
+  display: flex;
+  cursor: pointer;
+}
+
+.titleContainer:last-child {
+  justify-content: end;
+}
+
+.iconContainer {
+  cursor: pointer;
+  width: clamp(7rem, 5%, 20rem);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--lc-border);
+  transition: background 03 ease 01;
+  background: var(--lc-main);
+}
+
+.iconContainer svg {
+  color: var(--lc-text)
+}
+
+.iconContainer:hover {
+  background: var(--lc-secondary-text);
+}
+
+.iconContainer:hover svg {
+  color: var(--lc-main);
+}
+
+
+.titles {
+  font-size: clamp(2.4rem, 1.8vw, 400rem);
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  word-wrap: break-word;
+  color: var(--lc-text)
+}
+
+.titles--inactive {
+  color: var(--lc-secondary-text);
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.titles:hover {
+  color: var(--lc-button);
+  transform: scale(1.02);
+}

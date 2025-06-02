@@ -1,0 +1,87 @@
+.task {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: clamp(10rem, 20%, 30rem);
+  width: 100%;
+  transition: background 0.3s ease;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.task:hover {
+  background: var(--lc-border);
+}
+
+.row1,
+.row2 {
+  display: grid;
+  align-items: center;
+}
+
+.row1 {
+  position: relative;
+  grid-template-columns: 15% 1fr 10% 15%;
+}
+
+.checkboxWrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  width: 45%;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.checkbox:checked {
+  transform: scale(1.1);
+}
+
+.name {
+  font-size: clamp(2rem, 0.9vw, 400rem);
+  color: var(--lc-text);
+  font-weight: 500;
+}
+
+.points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(2rem, 0.9vw, 400rem);
+  color: var(--lc-text);
+  font-weight: 500;
+}
+
+.icon {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  width: clamp(1rem, 8%, 4rem);
+  height: 200%;
+}
+
+.row2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.assignee,
+.date {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1.8rem, 0.9vw, 400rem);
+  color: var(--lc-secondary-text);
+  font-weight: 500;
+}
+
+.assignee {
+  padding-left: 30%;
+}
+
+.date {
+  display: flex;
+  justify-content: end;
+  padding-right: 35%;
+}

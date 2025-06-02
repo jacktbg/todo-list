@@ -1,0 +1,12 @@
+.button {
+  width: clamp(5rem, 5%, 10rem);
+  height: 60%;
+  background: var(--urgent);
+  border: 0.1rem solid var(--lc-border);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {}

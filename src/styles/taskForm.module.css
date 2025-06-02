@@ -1,0 +1,182 @@
+.form {
+  position: fixed;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  width: clamp(50rem, 40vw, 200rem);
+  aspect-ratio: 1/0.3;
+  justify-content: space-evenly;
+  /* row-gap: clamp(1rem, 10%, 5rem); */
+  background: var(--lc-main);
+  padding: 0 1%;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--lc-border);
+}
+
+.nameContainer {
+  display: flex;
+  background: var(--lc-main);
+  height: 20%;
+}
+
+.name {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  color: var(--lc-text);
+  font-size: clamp(2rem, 1.2vw, 20rem);
+  font-weight: 700;
+
+}
+
+.name::placeholder {
+  color: var(--lc-secondary-text);
+}
+
+.selectorsContainer {
+  display: grid;
+  width: 100%;
+  column-gap: 5%;
+  grid-template-columns: 10% 25% 25% 25%;
+  grid-template-rows: 1fr;
+  height: 20%;
+}
+
+.inputContainer {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputContainer input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: var(--lc-text);
+  font-size: clamp(1.8rem, 1vw, 20rem);
+  font-weight: 700;
+
+}
+
+.optionContainer {
+  height: 100%;
+}
+
+.optionContainer select {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lc-main);
+  font-size: clamp(1.8rem, 1vw, 20rem);
+  font-weight: 700;
+  color: var(--lc-secondary-text);
+  cursor: pointer;
+}
+
+.optionContainer input {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.8rem, 1vw, 20rem);
+  font-weight: 700;
+  color: var(--lc-secondary-text);
+  cursor: pointer;
+  background: transparent;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  column-gap: 2%;
+}
+
+.error {
+  color: #9c0609;
+  font-size: clamp(1.2rem, 0.8vw, 1.6rem);
+  margin-top: 0.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  z-index: 11;
+  position: relative;
+}
+
+.error:empty {
+  display: none;
+}
+
+.cancel,
+.create {
+  width: 49%;
+  height: 100%;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--lc-border);
+  font-size: clamp(0.8rem, 200%, 20rem);
+  font-weight: 700;
+  transition: background 0.3 ease 0.1;
+  transition: transform 0.3 ease 0.1;
+}
+
+.cancel {
+  background: var(--lc-main);
+}
+
+.create {
+  background: var(--urgent);
+  color: var(--lc-main);
+}
+
+.cancel:active,
+.create:active {
+  transform: scale(0.9);
+}
+
+.cancel:hover,
+.create:hover {
+  transform: scale(1.02);
+
+}
+
+/* @media screen and (min-width: 3000px) {
+  .inputContainer input {}
+
+  .optionContainer input {}
+
+  .optionContainer select {}
+
+  .cancel,
+  .create {}
+} */
+
+@media screen and (max-width: 680px) {
+  .form {
+    justify-content: start;
+    padding: 5%;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 80%;
+    row-gap: 5%;
+  }
+
+  .nameContainer {
+    height: 20%;
+    width: 100%;
+  }
+
+  .selectorsContainer {
+    width: 100%;
+    row-gap: 5%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 40%;
+  }
+
+  .buttonsContainer {
+    width: 100%;
+  }
+}

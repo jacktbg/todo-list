@@ -1,0 +1,19 @@
+.taskList {
+  height: clamp(8rem, 100%, 300rem);
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  /* column-gap: clamp(1rem, 1%, 5rem); */
+  background: var(--lc-main);
+  padding: 0 2%;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--lc-border);
+}
+
+@media only screen and (max-width: 1400px) {
+  .taskList {
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+  }
+}
